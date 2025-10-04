@@ -82,4 +82,58 @@ export default function ChatPage() {
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter" && !loading) sendMessage()
     }
+
+    return (
+        <div className="flex flex-col items-center justify-cneter h-screen p-4">
+            <Card className="w-full max-w-2xl h-[80vh] flex flex-col">
+                <CardHeader className="fley justify-between items-center">
+                    <CardTitle>Chat with AI</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col flex-grow">
+                    <ScrollArea ref={scrollRef} className="flex-grow border rounded-md p-3 mb-3">
+                        {messages.length === 0 ? (
+                        <p className="text-muted-foreground text-center">
+                            Start chatting with CoinGPT!
+                        </p>
+                        ) : (
+                        messages.map((msg, i) => (
+                            <div
+                            key={i}
+                            className={`mb-2 p-2 rounded-lg ${
+                                msg.role === "user"
+                                ? "bg-primary text-primary-foreground self-end ml-auto max-w-[80%]"
+                                : "bg-muted text-muted-foreground max-w-[80%]"
+                            }`}
+                            >
+                            {msg.content}
+                            </div>
+                        ))
+                        )}
+                    </ScrollArea>
+
+                    <div className="flex gap-2">
+                        <Input
+                        placeholder={coins > 0 ? "Type your message..." : "No coins left!"}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        disabled={loading || coins <= 0}
+                        />
+                        <Button onClick={sendMessage} disabled={loading || coins <= 0}>
+                        {loading ? "..." : "Send"}
+                        </Button>
+                    </div>
+
+                    <div className="flex justify-between mt-4">
+                        <Button variant="outline" onClick={clearChat}>
+                        Clear Chat
+                        </Button>
+                        <Link href="/quiz">
+                        <Button variant="secondary">Back to Quiz</Button>
+                        </Link>
+                    </div>
+            </CardContent>
+            </Card>
+        </div>
+    )
   }
