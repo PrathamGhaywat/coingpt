@@ -96,6 +96,7 @@ export default function QuizPage() {
                     <Button className="w-full mt-3" onClick={handleSubmit}>
                         Submit
                     </Button>
+                    <Button className="w-full mt-3"><a href="./chat/">Go back to chat</a></Button>
                     </>
                 )}
                 <div className="mt-4 text-center">

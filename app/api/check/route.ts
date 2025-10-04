@@ -11,7 +11,7 @@ export async function POST(req: Request) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            model: "mistralai/mistral-small-3.2-24b-instruct:free", //this model because it is really fast. and free lol
+            model: "google/gemma-3n-e2b-it:free", //this model because it is really fast. and free lol
             messages: [{ role: "system", content: checkPrompt}]
         })
     })
