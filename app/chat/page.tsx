@@ -61,7 +61,7 @@ export default function ChatPage() {
 
       const aiMessage: ChatMessage = {
         role: "assistant",
-        content: data.reply || "🤖 Sorry, I didn’t understand that.",
+        content: data.reply || "Sorry, I didn’t understand that.",
       }
 
       const updated = [...newMessages, aiMessage]
