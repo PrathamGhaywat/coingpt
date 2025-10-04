@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-    const prompt = "Generate a simple trivia question. It should be in the middle or easy and hard. Don't give me the answer only the question no text and no formating" //This should throw of the user lol
+    const prompt = "Generate a trivia question. Not something ordinary. It should be in the middle or easy and hard. Don't give me the answer only the question no text and no formating" //This should throw of the user lol
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
