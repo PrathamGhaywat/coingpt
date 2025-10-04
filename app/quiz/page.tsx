@@ -32,7 +32,7 @@ export default function QuizPage() {
             setQuestion(data.question)
         } catch (error) {
             console.error("Smthing broke and stop reading my debuggin bro: ", error)
-            setQuestion("1 + 1 = ?")
+            setQuestion("Something ain't working brother")
         } finally {
             setLoading(false)
         }
@@ -67,4 +67,42 @@ export default function QuizPage() {
             alert("Failed fetching answer :sad:")
     }
     }
+    if (cooldownUntil > Date.now()) {
+        return (
+        <div className="flex flex-col items-center justify-center h-screen gap-4">
+            <CountdownTimer until={cooldownUntil} />
+            <CoinDisplay coins={coins} />
+        </div>
+        )
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-center h-screen">
+        <Card className="w-[400px]">
+            <CardHeader>
+                <CardTitle>🪙 Answer to earn coins!</CardTitle>
+            </CardHeader>
+            <CardContent>
+                {loading ? (
+                    <p>Loading question...</p>
+                ) : (
+                    <>
+                    <p className="mb-2">{question}</p>
+                    <Input
+                        placeholder="Your answer..."
+                        value={answer}
+                        onChange={(e) => setAnswer(e.target.value)}
+                    />
+                    <Button className="w-full mt-3" onClick={handleSubmit}>
+                        Submit
+                    </Button>
+                    </>
+                )}
+                <div className="mt-4 text-center">
+                    <CoinDisplay coins={coins} />
+                </div>
+            </CardContent>
+        </Card>
+    </div>
+  )
 }
