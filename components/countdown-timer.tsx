@@ -12,5 +12,11 @@ export function CountdownTimer({ until }: { until: number }) {
 
               if (timeLeft <= 0) return null
 
-              const
+              const minutes = Math.ceil(timeLeft / 60000);
+
+              return (
+                            <div className="text-center text-muted-foreground">
+                            ⏳ You can play again in {minutes} min. Go level up your IQ until then, dumbass.
+                            </div>
+              );
 }
