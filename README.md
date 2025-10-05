@@ -12,11 +12,10 @@ Everybody is saying AI is making us dumber so why not use it to get smarter?
 # Techstack
 Framework: NextJS
 Icons: Lucid React
-Models: Tongyi Deepresearch and Gemma (will give repetitive questions for some reason so please don't worry)
-API: openrouter
+Models: Openai-Gpt-OSS-20b (via https://ai.hackclub.com/)
+
 ## How to run:
 1. Clone the Repo
 2. npm install
-3. rename .env-example to .env.local and set openrouter key
 4. npm run dev
 5. visit http://localhost:3000 to see coingpt!
