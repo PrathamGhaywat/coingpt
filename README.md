@@ -1,3 +1,5 @@
+# to reactive reviewer: this was supposed to be a submission for siege but it isn't!
+
 # CoinGPT - You want AI, you earn AI
 
 To talk with an AI you have to first earn Coins via answering one of it's question. Only then you can talk to the AI.
