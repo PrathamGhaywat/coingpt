@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "CoinGPT",
-  description: "If you want AI, earn AI. Submission for Siege Hacklub Week 1",
+  description: "If you want AI, earn AI.",
 };
 
 export default function RootLayout({
